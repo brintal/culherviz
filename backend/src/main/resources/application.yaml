@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/culherviz
+    username: postgres
+    password: password
+
+
+logging:
+  level:
+      org.springframework.web: DEBUG
+      org.hibernate: ERROR
+      at.ac.tuwien.cvast.culherviz: DEBUG
+
+
+google.apikey: AIzaSyBYV-WN6EWN4EBpHdq-5tr1x-mfpvFzPy4
