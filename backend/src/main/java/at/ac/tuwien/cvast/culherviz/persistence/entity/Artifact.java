@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 @Entity
-@ToString(exclude = {"authors", "motifs", "keywords"})
+@ToString(exclude = {"authors", "motifs", "keywords", "location", "technique"})
 public class Artifact extends AbstractEntity {
 
     @Column(name = "onb_image_id")
@@ -74,5 +74,7 @@ public class Artifact extends AbstractEntity {
     @OneToOne
     @JoinColumn(name = "location_id")
     private Location location;
+
+
 
 }

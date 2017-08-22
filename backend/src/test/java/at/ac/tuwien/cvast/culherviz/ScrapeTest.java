@@ -15,42 +15,42 @@ public class ScrapeTest {
     @Test
     public void myTest() throws IOException {
 
-        int id = 1000000;
-
-
-        while (id < 2000000) {
-
-            String url = "http://www.bildarchivaustria.at/Pages/ImageDetail.aspx?p_iBildID=" + id;
-
-            Document doc = Jsoup.connect(url).get();
-            Elements tables = doc.select("table"); //select the first table.
-            if (tables.size() == 0) {
-                System.out.println("id " + id + " -> NO HIT");
-                id++;
-                continue;
-
-            }
-            Element table = tables.get(1); //select the first table.
-            Element tbody = table.select("tbody").get(0);
-            Elements rows = tbody.select("tr");
-
-            for (int i = 0; i < rows.size(); i++) { //first row is the col names so skip it.
-                Element row = rows.get(i);
-                Elements cols = row.select("td");
-
-                for (int j = 0; j < cols.size(); j++) { //first row is the col names so skip it.
-                    //System.out.print(cols.get(j).text() + "|");
-                }
-                //System.out.println("");
-
-            }
-
-            System.out.println("id " + id + " processed");
-
-            id++;
-
-
-        }
+//        int id = 1000000;
+//
+//
+//        while (id < 2000000) {
+//
+//            String url = "http://www.bildarchivaustria.at/Pages/ImageDetail.aspx?p_iBildID=" + id;
+//
+//            Document doc = Jsoup.connect(url).get();
+//            Elements tables = doc.select("table"); //select the first table.
+//            if (tables.size() == 0) {
+//                System.out.println("id " + id + " -> NO HIT");
+//                id++;
+//                continue;
+//
+//            }
+//            Element table = tables.get(1); //select the first table.
+//            Element tbody = table.select("tbody").get(0);
+//            Elements rows = tbody.select("tr");
+//
+//            for (int i = 0; i < rows.size(); i++) { //first row is the col names so skip it.
+//                Element row = rows.get(i);
+//                Elements cols = row.select("td");
+//
+//                for (int j = 0; j < cols.size(); j++) { //first row is the col names so skip it.
+//                    //System.out.print(cols.get(j).text() + "|");
+//                }
+//                //System.out.println("");
+//
+//            }
+//
+//            System.out.println("id " + id + " processed");
+//
+//            id++;
+//
+//
+//        }
 
     }
 //
@@ -107,13 +107,13 @@ public class ScrapeTest {
 
     @Test
     public void generateSha1() {
-        System.out.println(DigestUtils.sha1Hex("0altay195"));
-        System.out.println(DigestUtils.sha1Hex("0Altay199"));
-        System.out.println(DigestUtils.sha1Hex("0Samsara199"));
-        System.out.println(DigestUtils.sha1Hex("0Samsara195"));
-        System.out.println(DigestUtils.sha1Hex("IkeSdWLu8$vJnIuz"));
-        System.out.println(DigestUtils.sha1Hex("IkeSdWLu8%vJnIuy"));
-        System.out.println(DigestUtils.sha1Hex("0altay19"));
+//        System.out.println(DigestUtils.sha1Hex("0altay195"));
+//        System.out.println(DigestUtils.sha1Hex("0Altay199"));
+//        System.out.println(DigestUtils.sha1Hex("0Samsara199"));
+//        System.out.println(DigestUtils.sha1Hex("0Samsara195"));
+//        System.out.println(DigestUtils.sha1Hex("IkeSdWLu8$vJnIuz"));
+//        System.out.println(DigestUtils.sha1Hex("IkeSdWLu8%vJnIuy"));
+//        System.out.println(DigestUtils.sha1Hex("0altay19"));
 
 
 //

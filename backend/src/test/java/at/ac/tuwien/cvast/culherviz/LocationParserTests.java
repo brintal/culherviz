@@ -26,24 +26,24 @@ public class LocationParserTests {
 
     @Test
     public void contextLoads() {
-        int count = 1;
-        for (Artifact artifact : artifactRepository.findAllWithoutLocation()) {
-            Location location = null;
-            try {
-                location = locationParser.parseLocationForArtifact(artifact);
-                if (location != null) {
-                    artifact.setLocation(location);
-                    artifact.setLocationLastUpdated(new Date());
-                    artifactRepository.save(artifact);
-                }
-
-            } catch (LocationParserImpl.NoResultsException e) {
-                artifact.setLocationLastUpdated(new Date());
-                artifactRepository.save(artifact);
-                System.out.println("no results");
-            }
-            System.out.println(count++ + " | " + artifact.getOnbImageId());
-        }
+//        int count = 1;
+//        for (Artifact artifact : artifactRepository.findAllWithoutLocation()) {
+//            Location location = null;
+//            try {
+//                location = locationParser.parseLocationForArtifact(artifact);
+//                if (location != null) {
+//                    artifact.setLocation(location);
+//                    artifact.setLocationLastUpdated(new Date());
+//                    artifactRepository.save(artifact);
+//                }
+//
+//            } catch (LocationParserImpl.NoResultsException e) {
+//                artifact.setLocationLastUpdated(new Date());
+//                artifactRepository.save(artifact);
+//                System.out.println("no results");
+//            }
+//            System.out.println(count++ + " | " + artifact.getOnbImageId());
+//        }
     }
 
 }

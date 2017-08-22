@@ -1,5 +1,6 @@
 package at.ac.tuwien.cvast.culherviz.persistence.repo;
 
+import at.ac.tuwien.cvast.culherviz.dto.SimpleArtifact;
 import at.ac.tuwien.cvast.culherviz.persistence.entity.Artifact;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -18,6 +19,10 @@ public interface ArtifactRepository extends JpaRepository<Artifact, Integer>, Jp
 
     @Query("select a from Artifact a where a.location is null and a.locationLastUpdated is null")
     List<Artifact> findAllWithoutLocation();
+
+    List<SimpleArtifact> findAllByLocationIsNotNull();
+
+    List<SimpleArtifact> findAllByLocationIsNotNullAndYearBetween(Integer yearMin, Integer yearMax);
 
 
 }
